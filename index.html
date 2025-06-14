@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style/reset.css" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/pure-snow.css" />
-    <script src="js/pure-snow.js" defer></script>
+    <link rel="stylesheet" href="style/btn-pulse.css" />
     <link
       rel="icon"
       type="image/png"
@@ -31,7 +31,7 @@
         <div class="social-location">Perm Krai, Russia</div>
         <div class="social-desc">"Never gonna give you up!"</div>
         <nav>
-          <a href="mailto:egorpya@vivaldi.net">E-mail</a>
+          <a tabindex="0" id="email" href="#">egorpya@vivaldi.net</a>
           <a href="https://github.com/egorpya">GitHub</a>
           <a href="https://www.frontendmentor.io/profile/egorpya"
             >Frontend Mentor</a
@@ -46,4 +46,33 @@
       </div>
     </main>
   </body>
+  <script src="js/pure-snow.js" defer></script>
+  <script>
+    document
+      .getElementById("email")
+      .addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Copy the text
+        const textToCopy = this.innerText;
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+            // Change text content
+            this.innerText = "✅ Copied!";
+
+            // Add pulse animation
+            this.classList.add("pulse");
+
+            // Reset after animation
+            setTimeout(() => {
+              this.innerText = textToCopy; // Reset text
+              this.classList.remove("pulse"); // Remove animation class
+            }, 1000); // Duration should match the animation duration
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      });
+  </script>
 </html>
