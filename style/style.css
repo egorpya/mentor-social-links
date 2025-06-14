@@ -39,28 +39,29 @@ nav {
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    background-color: var(--c-grey-700);
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.5s;
+  }
+  a:not(a:last-child) {
+    margin: 8px 0;
+  }
+  a:last-child {
+    margin: 8px 0 0;
+  }
+  a:hover {
+    background-color: var(--c-red);
+  }
 }
 
-nav > a {
-  padding: 15px;
-  color: white;
-  text-decoration: none;
-  background-color: var(--c-grey-700);
-  width: 100%;
-  text-align: center;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.5s;
-}
-nav > a:not(a:last-child) {
-  margin: 8px 0;
-}
-nav > a:last-child {
-  margin: 8px 0 0;
-}
-nav > a:hover {
-  background-color: var(--c-red);
-}
 img.avatar {
   width: 128px;
   border-radius: 50%;
