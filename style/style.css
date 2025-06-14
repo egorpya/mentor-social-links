@@ -1,0 +1,84 @@
+@import url(../assets/fonts/Inter-VariableFont_slntwght.ttf);
+
+:root {
+  --c-red: hsl(214, 94%, 57%);
+  --c-white: hsl(0, 0%, 100%);
+  --c-grey-700: hsl(0, 0%, 20%);
+  --c-grey-800: hsl(0, 0%, 12%);
+  --c-grey-900: hsl(0, 0%, 8%);
+}
+h1,
+nav a,
+.social-location,
+.social-desc {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--c-grey-900);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background-color: var(--c-grey-800);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  border-radius: 15px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+nav > a {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  background-color: var(--c-grey-700);
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+nav > a:not(a:last-child) {
+  margin: 8px 0;
+}
+nav > a:last-child {
+  margin: 8px 0 0;
+}
+nav > a:hover {
+  background-color: var(--c-red);
+}
+img.avatar {
+  width: 128px;
+  border-radius: 50%;
+}
+
+h1 {
+  color: white;
+  font-size: 20pt;
+  margin: 15px 0;
+  font-weight: 700;
+}
+
+.social-location {
+  color: var(--c-red);
+  margin: 5px 0 20px;
+  font-weight: 600;
+}
+.social-desc {
+  color: white;
+  margin: 15px 0;
+}
